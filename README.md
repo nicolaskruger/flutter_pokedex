@@ -1,4 +1,4 @@
-# pokedex
+# :zap: pokedex
 
 Esse projeto é o projeto final do treinamento de `flutter` promovido pela cwi
 
