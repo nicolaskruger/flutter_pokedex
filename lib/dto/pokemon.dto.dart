@@ -12,18 +12,21 @@ class PokemonDto {
   final String sprite;
   final List<String> types;
   final List<String> moves;
-  final StatsDto statsDto;
+  final List<StatsDto> statsDto;
 
   factory PokemonDto.fromJson(dynamic json) {
     return PokemonDto(
-        name: json["name"],
-        sprite: json["sprites"]["other"]["oficial-artwork"]["front_default"],
-        moves: (json["moves"] as List<dynamic>)
-            .map((e) => e["move"]["name"] as String)
-            .toList(),
-        types: (json["types"] as List<dynamic>)
-            .map((e) => e["type"]["name"] as String)
-            .toList(),
-        statsDto: StatsDto.fromJson(json["stats"]));
+      name: json["name"],
+      sprite: json["sprites"]["other"]["official-artwork"]["front_default"],
+      moves: (json["moves"] as List<dynamic>)
+          .map((e) => e["move"]["name"] as String)
+          .toList(),
+      types: (json["types"] as List<dynamic>)
+          .map((e) => e["type"]["name"] as String)
+          .toList(),
+      statsDto: (json["stats"] as List<dynamic>)
+          .map((e) => StatsDto.fromJson(e))
+          .toList(),
+    );
   }
 }
