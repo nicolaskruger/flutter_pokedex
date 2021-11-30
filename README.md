@@ -19,4 +19,4 @@ samples, guidance on mobile development, and a full API reference.
 
 | api                             | figma                                                                                                |
 | :------------------------------ | :--------------------------------------------------------------------------------------------------- |
-| [api](https://pokeapi.co/docs/) | [figma](<https://www.ﬁgma.com/ﬁle/dBNmWnHd6DjJ3FHnxSkLex/pokedex-simpliﬁcado-(Copy)?node-id=0%3A44>) |
+| [api](https://pokeapi.co/docs/) | [figma](https://www.figma.com/file/dBNmWnHd6DjJ3FHnxSkLex/pokedex-simplificado-(Copy)?node-id=0%3A1) |
