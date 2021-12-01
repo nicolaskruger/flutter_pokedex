@@ -16,5 +16,9 @@ class MyColors {
     Color(0xff51E85E),
   ]);
   static final filterGradient = ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.5);
-  static final inputBackgroundColor = Color.fromARGB(1, 0, 0, 0);
+  static final inputBackgroundColor = Color.fromARGB(0, 0, 0, 0);
+  static final textColor = Colors.black;
+  static final ligthColor = Color(0xfffafafa);
+  static final textSubColor = Color(0xffa4a4a4);
+  static final buttonOverlayColor = Color(0xff559EDF);
 }

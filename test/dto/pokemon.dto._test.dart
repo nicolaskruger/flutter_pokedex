@@ -31,19 +31,21 @@ expectPokemon(PokemonDto actual, PokemonDto matcher) {
 }
 
 final getDitto = () => PokemonDto(
-    name: "ditto",
-    moves: ["transform"],
-    sprite:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png",
-    types: ["normal"],
-    statsDto: [
-      StatsDto(name: "hp", point: 48),
-      StatsDto(name: "attack", point: 48),
-      StatsDto(name: "defense", point: 48),
-      StatsDto(name: "special-attack", point: 48),
-      StatsDto(name: "special-defense", point: 48),
-      StatsDto(name: "speed", point: 48)
-    ]);
+      name: "ditto",
+      moves: ["transform"],
+      sprite:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png",
+      types: ["normal"],
+      statsDto: [
+        StatsDto(name: "hp", point: 48),
+        StatsDto(name: "attack", point: 48),
+        StatsDto(name: "defense", point: 48),
+        StatsDto(name: "special-attack", point: 48),
+        StatsDto(name: "special-defense", point: 48),
+        StatsDto(name: "speed", point: 48)
+      ],
+      id: 203,
+    );
 
 void main() {
   test("deve converter o pokemon de json corretamente", () async {

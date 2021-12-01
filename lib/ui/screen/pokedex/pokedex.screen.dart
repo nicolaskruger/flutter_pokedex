@@ -5,6 +5,8 @@ import 'package:pokedex/dto/pokemon.dto.dart';
 import 'package:pokedex/presenter/pokedex.presenter.dart';
 import 'package:pokedex/ui/components/load/load.component.dart';
 import 'package:pokedex/ui/screen/pokedex/pokedex.view.dart';
+import 'package:pokedex/ui/screen/pokedex/section/body/pokedex.body.dart';
+import 'package:pokedex/ui/screen/pokedex/section/pokedex.header.dart';
 import 'package:pokedex/util/my_colors.utils.dart';
 
 class PokedexScreen extends StatefulWidget {
@@ -21,6 +23,7 @@ class _PokedexScreenState extends State<PokedexScreen>
   late AnimationController _controller;
   var isLoading = true;
   List<PokemonDto> pokeList = [];
+  var search = "";
   @override
   void initState() {
     super.initState();
@@ -57,44 +60,12 @@ class _PokedexScreenState extends State<PokedexScreen>
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            padding: EdgeInsets.only(top: 30),
-            width: MediaQuery.of(context).size.width,
-            color: Colors.green[100],
-            child: Column(
-              children: [
-                Text("Pokemon"),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: UnderlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(1000),
-                        ),
-                        filled: true,
-                        prefixIcon: Icon(Icons.search),
-                        suffixIcon: Icon(
-                          Icons.mic,
-                          color: Colors.black,
-                        )),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  height: 2,
-                  decoration: BoxDecoration(
-                    gradient: MyColors.headerGradiente,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          PokedexHeader(onChange: (value) {
+            setState(() {
+              search = value;
+            });
+          }),
+          PokedexBody(list: pokeList)
         ],
       ),
     );
