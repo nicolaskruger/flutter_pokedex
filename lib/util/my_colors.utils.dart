@@ -21,4 +21,6 @@ class MyColors {
   static final ligthColor = Color(0xfffafafa);
   static final textSubColor = Color(0xffa4a4a4);
   static final buttonOverlayColor = Color(0xff559EDF);
+  static final headerFooterBackGround = Colors.green[100];
+  static final borderDark = Color(0xff8DE061);
 }

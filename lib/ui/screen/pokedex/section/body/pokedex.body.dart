@@ -10,8 +10,7 @@ class PokedexBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
+    return Expanded(
       child: ListView(
         children: [
           ...list.map((e) {

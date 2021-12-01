@@ -12,7 +12,7 @@ class PokedexHeader extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 30),
       width: MediaQuery.of(context).size.width,
-      color: Colors.green[100],
+      color: MyColors.headerFooterBackGround,
       child: Column(
         children: [
           Text(

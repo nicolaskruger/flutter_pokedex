@@ -6,6 +6,8 @@ import 'package:pokedex/presenter/pokedex.presenter.dart';
 import 'package:pokedex/ui/components/load/load.component.dart';
 import 'package:pokedex/ui/screen/pokedex/pokedex.view.dart';
 import 'package:pokedex/ui/screen/pokedex/section/body/pokedex.body.dart';
+import 'package:pokedex/ui/screen/pokedex/section/footer/enum_footer_pokedex.dart';
+import 'package:pokedex/ui/screen/pokedex/section/footer/pokedex.footer.dart';
 import 'package:pokedex/ui/screen/pokedex/section/pokedex.header.dart';
 import 'package:pokedex/util/my_colors.utils.dart';
 
@@ -24,6 +26,7 @@ class _PokedexScreenState extends State<PokedexScreen>
   var isLoading = true;
   List<PokemonDto> pokeList = [];
   var search = "";
+  EnumFooterPokedex enumFooterPokedex = EnumFooterPokedex.POKEMON;
   @override
   void initState() {
     super.initState();
@@ -65,7 +68,15 @@ class _PokedexScreenState extends State<PokedexScreen>
               search = value;
             });
           }),
-          PokedexBody(list: pokeList)
+          PokedexBody(list: pokedexPresenter.filterList(pokeList, search)),
+          PokedexFooter(
+            current: enumFooterPokedex,
+            change: (newValue) {
+              setState(() {
+                enumFooterPokedex = newValue;
+              });
+            },
+          ),
         ],
       ),
     );

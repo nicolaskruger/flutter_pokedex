@@ -6,16 +6,6 @@ class PokedexPresenter {
   PokedexPresenter({required this.pokedexRepository});
   late PokedexView pokedexView;
   final PokedexRepository pokedexRepository;
-  var _isLoading = true;
-  List<PokemonDto> _pokeList = [];
-
-  get loading {
-    return _isLoading;
-  }
-
-  get pokeList {
-    return _pokeList;
-  }
 
   inith() async {
     pokedexView.setLoad(true);
@@ -23,5 +13,9 @@ class PokedexPresenter {
     pokedexView.setPokemonList(await pokedexRepository.getPokelist());
 
     pokedexView.setLoad(false);
+  }
+
+  filterList(List<PokemonDto> list, String name) {
+    return list.where((element) => element.name.contains(name)).toList();
   }
 }
