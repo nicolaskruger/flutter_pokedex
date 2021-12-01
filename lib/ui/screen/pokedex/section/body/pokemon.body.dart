@@ -22,8 +22,12 @@ class PokemonBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  width: 15,
+                ),
                 Image.network(
                   pokemonDto.sprite,
+                  height: 50,
                 ),
                 SizedBox(
                   width: 10,
@@ -41,7 +45,7 @@ class PokemonBody extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      "#" + pokemonDto.id.toString().padLeft(4, '0'),
+                      "#" + pokemonDto.id.toString().padLeft(3, '0'),
                       textAlign: TextAlign.right,
                       style: Theme.of(context).textTheme.bodyText2,
                     ),
