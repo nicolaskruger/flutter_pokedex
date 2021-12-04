@@ -1,0 +1,87 @@
+{
+"count": 844,
+"next": "https://pokeapi.co/api/v2/move?offset=20&limit=20",
+"previous": null,
+"results": [
+{
+"name": "pound",
+"url": "move"
+},
+{
+"name": "karate-chop",
+"url": "move"
+},
+{
+"name": "double-slap",
+"url": "move"
+},
+{
+"name": "comet-punch",
+"url": "move"
+},
+{
+"name": "mega-punch",
+"url": "move"
+},
+{
+"name": "pay-day",
+"url": "move"
+},
+{
+"name": "fire-punch",
+"url": "move"
+},
+{
+"name": "ice-punch",
+"url": "move"
+},
+{
+"name": "thunder-punch",
+"url": "move"
+},
+{
+"name": "scratch",
+"url": "move"
+},
+{
+"name": "vise-grip",
+"url": "move"
+},
+{
+"name": "guillotine",
+"url": "move"
+},
+{
+"name": "razor-wind",
+"url": "move"
+},
+{
+"name": "swords-dance",
+"url": "move"
+},
+{
+"name": "cut",
+"url": "move"
+},
+{
+"name": "gust",
+"url": "move"
+},
+{
+"name": "wing-attack",
+"url": "move"
+},
+{
+"name": "whirlwind",
+"url": "move"
+},
+{
+"name": "fly",
+"url": "move"
+},
+{
+"name": "bind",
+"url": "move"
+}
+]
+}
