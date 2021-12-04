@@ -8,30 +8,18 @@ class PokedexRepository {
   PokedexRepository({required this.dio});
   final Dio dio;
 
-  Future<List<T>> _getListNew<T>(
-      String url, T Function(dynamic) funtion) async {
+  Future<List<T>> _getList<T>(String url, T Function(dynamic) funtion) async {
     return Future.wait(
         ((await dio.get(url)).data["results"] as List<dynamic>).map((e) async {
       return funtion((await dio.get(e['url'])).data);
     }).toList());
   }
 
-  Future<List<dynamic>> _getList(Response<dynamic> response) async {
-    return Future.wait(
-        (response.data["results"] as List<dynamic>).map((e) async {
-      return (await dio.get(e['url'])).data;
-    }).toList());
-  }
-
   Future<List<PokemonDto>> getPokelist() async {
-    return (await _getList(await dio.get(POKELIST_URL)))
-        .map((e) => PokemonDto.fromJson(e))
-        .toList();
+    return _getList(POKELIST_URL, (e) => PokemonDto.fromJson(e));
   }
 
   Future<List<MoveDto>> getMovesList() async {
-    return (await _getList(await dio.get(MOVELIST_URL)))
-        .map((e) => MoveDto.fromJson(e))
-        .toList();
+    return _getList(MOVELIST_URL, (e) => MoveDto.fromJson(e));
   }
 }
