@@ -1,6 +1,7 @@
 import 'package:pokedex/dto/stats.dto.dart';
+import 'package:pokedex/dto/with_name.dto.dart';
 
-class PokemonDto {
+class PokemonDto extends WithName {
   PokemonDto({
     required this.name,
     required this.moves,
@@ -8,7 +9,7 @@ class PokemonDto {
     required this.types,
     required this.statsDto,
     required this.id,
-  });
+  }) : super(name: name);
   final String name;
   final String sprite;
   final List<String> types;

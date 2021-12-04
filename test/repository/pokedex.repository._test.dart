@@ -4,6 +4,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:pokedex/repository/pokedex.repository.dart';
 
+import '../dto/item.dto._test.dart';
 import '../dto/move.dto._test.dart';
 import '../dto/pokemon.dto._test.dart';
 import '../helper/file_to_json.dart';
@@ -32,6 +33,16 @@ void main() {
       final list = await pokedexRepository.getMovesList();
       list.forEach((element) {
         testMove(element, createMove());
+      });
+    });
+    test("deve converter lista de item para item", () async {
+      when(dio.get(PokedexRepository.ITEM_LIST)).thenAnswer(
+          (_) async => fileToResponse("test/repository/itemlist.json"));
+      when(dio.get("item"))
+          .thenAnswer((_) async => fileToResponse("test/dto/item.json"));
+      final list = await pokedexRepository.getItemList();
+      list.forEach((element) {
+        testItem(element, createItem());
       });
     });
   });

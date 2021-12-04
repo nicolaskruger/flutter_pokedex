@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:pokedex/dto/item.dto.dart';
+import 'package:pokedex/dto/move.dto.dart';
 import 'package:pokedex/dto/pokemon.dto.dart';
 import 'package:pokedex/presenter/pokedex.presenter.dart';
 import 'package:pokedex/ui/components/load/load.component.dart';
@@ -25,6 +27,8 @@ class _PokedexScreenState extends State<PokedexScreen>
   late AnimationController _controller;
   var isLoading = true;
   List<PokemonDto> pokeList = [];
+  List<ItemDto> itemList = [];
+  List<MoveDto> moveList = [];
   var search = "";
   EnumFooterPokedex enumFooterPokedex = EnumFooterPokedex.POKEMON;
   @override
@@ -33,6 +37,34 @@ class _PokedexScreenState extends State<PokedexScreen>
     pokedexPresenter.pokedexView = this;
     _controller = AnimationController(vsync: this);
     pokedexPresenter.inith();
+  }
+
+  @override
+  List<MoveDto> getMoveList() {
+    // TODO: implement getMoveList
+    return moveList;
+  }
+
+  @override
+  List<PokemonDto> getPokemonList() {
+    // TODO: implement getPokemonList
+    return pokeList;
+  }
+
+  @override
+  setItemList(List<ItemDto> list) {
+    // TODO: implement setItemList
+    setState(() {
+      itemList = list;
+    });
+  }
+
+  @override
+  setMoveList(List<MoveDto> list) {
+    // TODO: implement setMoveList
+    setState(() {
+      moveList = list;
+    });
   }
 
   @override
@@ -68,7 +100,8 @@ class _PokedexScreenState extends State<PokedexScreen>
               search = value;
             });
           }),
-          PokedexBody(list: pokedexPresenter.filterList(pokeList, search)),
+          PokedexBody(
+              list: pokedexPresenter.filterList(enumFooterPokedex, search)),
           PokedexFooter(
             current: enumFooterPokedex,
             change: (newValue) {
@@ -80,5 +113,11 @@ class _PokedexScreenState extends State<PokedexScreen>
         ],
       ),
     );
+  }
+
+  @override
+  List<ItemDto> getItemList() {
+    // TODO: implement getItemList
+    throw UnimplementedError();
   }
 }

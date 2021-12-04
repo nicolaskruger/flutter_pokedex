@@ -1,11 +1,13 @@
-class MoveDto {
+import 'package:pokedex/dto/with_name.dto.dart';
+
+class MoveDto extends WithName {
   MoveDto({
     required this.basePower,
     required this.accuracy,
     required this.pp,
     required this.name,
     required this.type,
-  });
+  }) : super(name: name);
 
   final int basePower;
   final int accuracy;

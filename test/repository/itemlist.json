@@ -1,0 +1,19 @@
+{
+    "count":954,
+    "next":"https://pokeapi.co/api/v2/item?offset=3&limit=3",
+    "previous":null,
+    "results":[
+        {   
+            "name":"master-ball",
+            "url":"item"
+        },
+        {   
+            "name":"ultra-ball",
+            "url":"item"
+        },
+        {
+            "name":"great-ball",
+            "url":"item"
+        }
+    ]
+}
