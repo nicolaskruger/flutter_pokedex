@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex/dto/pokemon.dto.dart';
 import 'package:pokedex/ui/screen/pokedex/section/body/types.body.dart';
+import 'package:pokedex/ui/screen/pokemon/pokemon.screen.dart';
 import 'package:pokedex/util/type_color.dart';
 
 class PokemonBody extends StatelessWidget {
@@ -9,12 +10,19 @@ class PokemonBody extends StatelessWidget {
 
   final PokemonDto pokemonDto;
 
+  onPokemonPressed(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      PokemonScreen.route,
+      arguments: pokemonDto,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 75,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () => onPokemonPressed(context),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
