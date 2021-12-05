@@ -18,13 +18,14 @@ class PokedexPresenter {
     pokedexView.setLoad(false);
   }
 
-  filterList(EnumFooterPokedex enumFooterPokedex, String name) {
-    Map<EnumFooterPokedex, List<WithName>> _swt = {
+  List filterList(EnumFooterPokedex enumFooterPokedex, String name) {
+    Map<EnumFooterPokedex, List> _swt = {
       EnumFooterPokedex.ITENS: pokedexView.getItemList(),
       EnumFooterPokedex.MOVES: pokedexView.getMoveList(),
-      EnumFooterPokedex.POKEMON: pokedexView.getItemList(),
+      EnumFooterPokedex.POKEMON: pokedexView.getPokemonList(),
     };
     return (_swt[enumFooterPokedex] as List<WithName>)
-        .where((element) => element.name.contains(name));
+        .where((element) => element.name.contains(name))
+        .toList();
   }
 }

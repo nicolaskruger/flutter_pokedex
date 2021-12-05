@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/dto/move.dto.dart';
 import 'package:pokedex/dto/pokemon.dto.dart';
+import 'package:pokedex/ui/screen/pokedex/section/body/move.body.dart';
 import 'package:pokedex/ui/screen/pokedex/section/body/pokemon.body.dart';
 
 class PokedexBody extends StatelessWidget {
@@ -18,6 +20,9 @@ class PokedexBody extends StatelessWidget {
               return PokemonBody(
                 pokemonDto: e as PokemonDto,
               );
+            }
+            if (e is MoveDto) {
+              return MoveBody(moveDto: e);
             }
             return SizedBox(
               height: 10,

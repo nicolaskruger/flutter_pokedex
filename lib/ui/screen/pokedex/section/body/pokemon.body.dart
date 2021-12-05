@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex/dto/pokemon.dto.dart';
+import 'package:pokedex/ui/screen/pokedex/section/body/types.body.dart';
 import 'package:pokedex/util/type_color.dart';
 
 class PokemonBody extends StatelessWidget {
@@ -53,21 +54,7 @@ class PokemonBody extends StatelessWidget {
                 )
               ],
             ),
-            Row(
-              children: [
-                ...pokemonDto.types.map(
-                  (e) => Container(
-                    margin: EdgeInsets.only(left: 5),
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: typeColor[e],
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                )
-              ],
-            )
+            TypeBody(types: pokemonDto.types),
           ],
         ),
       ),

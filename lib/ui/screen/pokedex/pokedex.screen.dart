@@ -52,6 +52,12 @@ class _PokedexScreenState extends State<PokedexScreen>
   }
 
   @override
+  List<ItemDto> getItemList() {
+    // TODO: implement getItemList
+    return itemList;
+  }
+
+  @override
   setItemList(List<ItemDto> list) {
     // TODO: implement setItemList
     setState(() {
@@ -113,11 +119,5 @@ class _PokedexScreenState extends State<PokedexScreen>
         ],
       ),
     );
-  }
-
-  @override
-  List<ItemDto> getItemList() {
-    // TODO: implement getItemList
-    throw UnimplementedError();
   }
 }
