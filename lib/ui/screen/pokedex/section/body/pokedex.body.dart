@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/dto/item.dto.dart';
 import 'package:pokedex/dto/move.dto.dart';
 import 'package:pokedex/dto/pokemon.dto.dart';
+import 'package:pokedex/ui/screen/pokedex/section/body/item.body.dart';
 import 'package:pokedex/ui/screen/pokedex/section/body/move.body.dart';
 import 'package:pokedex/ui/screen/pokedex/section/body/pokemon.body.dart';
 
@@ -23,6 +25,9 @@ class PokedexBody extends StatelessWidget {
             }
             if (e is MoveDto) {
               return MoveBody(moveDto: e);
+            }
+            if (e is ItemDto) {
+              return ItemBody(itemDto: e);
             }
             return SizedBox(
               height: 10,
