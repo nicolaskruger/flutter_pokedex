@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:pokedex/dto/pokemon.dto.dart';
 import 'package:pokedex/ui/components/img_fitter/img_fitter.component.dart';
+import 'package:pokedex/ui/components/round_type/round_type.component.dart';
+import 'package:pokedex/ui/components/stat_footer/stat_foote.component.dart';
 import 'package:pokedex/ui/components/template/template.compoente.dart';
+import 'package:pokedex/util/lorem.utils.dart';
 import 'package:pokedex/util/type_color.dart';
 
 class PokemonScreen extends StatelessWidget {
@@ -22,8 +25,9 @@ class PokemonScreen extends StatelessWidget {
         color: color,
         img: ImageFitterComponent(url: pokemonDto.sprite),
         title: pokemonDto.name,
-        subtitle: SizedBox(),
-        footer: SizedBox(),
+        subtitle: RoundType(type: pokemonDto.types.first),
+        description: LOREM,
+        footer: StatFooter(listStat: pokemonDto.statsDto, color: color),
       ),
     );
   }

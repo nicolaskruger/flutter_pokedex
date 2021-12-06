@@ -23,4 +23,5 @@ class MyColors {
   static final buttonOverlayColor = Color(0xff559EDF);
   static final headerFooterBackGround = Colors.green[100];
   static final borderDark = Color(0xff8DE061);
+  static final numberColor = Color(0xff666666);
 }

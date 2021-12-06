@@ -28,14 +28,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: myTheme,
-      // home: createDebugScreen(),
-      initialRoute: PokedexScreen.route,
-      routes: {
-        PokedexScreen.route: (_) => PokedexScreen(),
-        PokemonScreen.route: (context) => PokemonScreen(
-            pokemonDto:
-                ModalRoute.of(context)?.settings.arguments as PokemonDto)
-      },
+      home: createDebugScreen(),
+      // initialRoute: PokedexScreen.route,
+      // routes: {
+      //   PokedexScreen.route: (_) => PokedexScreen(),
+      //   PokemonScreen.route: (context) => PokemonScreen(
+      //       pokemonDto:
+      //           ModalRoute.of(context)?.settings.arguments as PokemonDto)
+      // },
     );
   }
 }
