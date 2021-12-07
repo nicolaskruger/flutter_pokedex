@@ -25,18 +25,25 @@ class PokedexHeader extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 20, right: 20),
             child: TextField(
+              style: TextStyle(
+                fontFamily: "Helvetica Neue",
+                fontSize: 17,
+                color: MyColors.textColor,
+              ),
               onChanged: onChange,
               decoration: InputDecoration(
-                  border: UnderlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(1000),
-                  ),
-                  filled: true,
-                  prefixIcon: Icon(Icons.search),
-                  suffixIcon: Icon(
-                    Icons.mic,
-                    color: Colors.black,
-                  )),
+                border: UnderlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(1000),
+                ),
+                filled: true,
+                prefixIcon: Icon(Icons.search),
+                suffixIcon: Icon(
+                  Icons.mic,
+                  color: Colors.black,
+                ),
+                floatingLabelBehavior: FloatingLabelBehavior.never,
+              ),
             ),
           ),
           SizedBox(

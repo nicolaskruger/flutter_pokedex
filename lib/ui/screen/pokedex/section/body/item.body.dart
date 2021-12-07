@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex/dto/item.dto.dart';
+import 'package:pokedex/ui/screen/item/item.screen.dart';
 import 'package:pokedex/ui/screen/pokedex/section/body/types.body.dart';
 import 'package:pokedex/util/my_colors.utils.dart';
 
@@ -9,12 +10,19 @@ class ItemBody extends StatelessWidget {
 
   final ItemDto itemDto;
 
+  onItemPressed(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      ItemScreen.route,
+      arguments: itemDto,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 75,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () => onItemPressed(context),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
