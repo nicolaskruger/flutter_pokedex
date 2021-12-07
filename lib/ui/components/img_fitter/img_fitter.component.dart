@@ -1,15 +1,18 @@
 import 'package:flutter/cupertino.dart';
 
 class ImageFitterComponent extends StatelessWidget {
-  const ImageFitterComponent({Key? key, required this.url}) : super(key: key);
+  const ImageFitterComponent({Key? key, required this.url, this.width = 80})
+      : super(key: key);
 
   final String url;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return Image.network(
       url,
-      width: 80,
+      width: width,
+      fit: BoxFit.cover,
     );
   }
 }

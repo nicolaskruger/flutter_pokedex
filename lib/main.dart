@@ -1,12 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:pokedex/dto/item.dto.dart';
 import 'package:pokedex/dto/move.dto.dart';
 import 'package:pokedex/dto/pokemon.dto.dart';
 import 'package:pokedex/dto/stats.dto.dart';
 import 'package:pokedex/presenter/pokedex.presenter.dart';
 import 'package:pokedex/repository/pokedex.repository.dart';
 import 'package:pokedex/theme/theme.dart';
+import 'package:pokedex/ui/screen/item/item.screen.dart';
 import 'package:pokedex/ui/screen/move/move.screen.dart';
 import 'package:pokedex/ui/screen/pokedex/pokedex.screen.dart';
 import 'package:pokedex/ui/screen/pokemon/pokemon.screen.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: myTheme,
-      home: createDebugScreenMove(),
+      home: createDebugScreenItem(),
       // initialRoute: PokedexScreen.route,
       // routes: {
       //   PokedexScreen.route: (_) => PokedexScreen(),
@@ -75,6 +77,17 @@ createDebugScreenMove() {
       name: "pound",
       pp: 35,
       type: "normal",
+    ),
+  );
+}
+
+createDebugScreenItem() {
+  return ItemScreen(
+    itemDto: ItemDto(
+      name: "master-ball",
+      price: 0,
+      url:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
     ),
   );
 }

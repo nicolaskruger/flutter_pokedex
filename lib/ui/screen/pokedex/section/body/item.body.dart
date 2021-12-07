@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex/dto/item.dto.dart';
 import 'package:pokedex/ui/screen/pokedex/section/body/types.body.dart';
+import 'package:pokedex/util/my_colors.utils.dart';
 
 class ItemBody extends StatelessWidget {
   const ItemBody({Key? key, required this.itemDto}) : super(key: key);
@@ -49,7 +50,7 @@ class ItemBody extends StatelessWidget {
                 ),
                 Icon(
                   Icons.attach_money,
-                  color: Colors.black,
+                  color: MyColors.textColor,
                 ),
                 SizedBox(
                   width: 19,

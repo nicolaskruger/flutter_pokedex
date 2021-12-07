@@ -90,7 +90,7 @@ class MoveFooterItem extends StatelessWidget {
             data,
             style: TextStyle(
               decoration: TextDecoration.none,
-              color: MyColors.textSubColor,
+              color: MyColors.textColor,
               fontSize: 19,
               fontFamily: "Avenir",
             ),

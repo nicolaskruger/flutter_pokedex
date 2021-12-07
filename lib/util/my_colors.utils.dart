@@ -17,7 +17,7 @@ class MyColors {
   ]);
   static final filterGradient = ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.5);
   static final inputBackgroundColor = Color.fromARGB(0, 0, 0, 0);
-  static final textColor = Colors.black;
+  static final textColor = Color(0xff4f4f4f);
   static final ligthColor = Color(0xfffafafa);
   static final textSubColor = Color(0xffa4a4a4);
   static final buttonOverlayColor = Color(0xff559EDF);
@@ -25,4 +25,5 @@ class MyColors {
   static final borderDark = Color(0xff8DE061);
   static final numberColor = Color(0xff666666);
   static final gapColor = Color(0xffe4e4e4);
+  static final itemScreenBackGround = Color(0xff75DEDD);
 }
