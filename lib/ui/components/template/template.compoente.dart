@@ -33,35 +33,33 @@ class TemplateCompoent extends StatelessWidget {
           child: Container(
             width: MediaQuery.of(context).size.width,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    TemplateTitle(text: title),
-                    SizedBox(
-                      height: 19,
-                    ),
-                    subtitle,
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        right: 7,
-                        left: 7,
-                        bottom: 0,
-                        top: 0,
-                      ),
-                      child: Text(
-                        description,
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.subtitle2,
-                      ),
-                    ),
-                  ],
+                SizedBox(
+                  height: 30,
+                ),
+                TemplateTitle(text: title),
+                SizedBox(
+                  height: 19,
+                ),
+                subtitle,
+                SizedBox(
+                  height: 15,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    right: 7,
+                    left: 7,
+                    bottom: 0,
+                    top: 0,
+                  ),
+                  child: Text(
+                    description,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.subtitle2,
+                  ),
+                ),
+                SizedBox(
+                  height: 23,
                 ),
                 footer,
               ],

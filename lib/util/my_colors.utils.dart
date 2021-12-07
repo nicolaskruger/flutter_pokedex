@@ -24,4 +24,5 @@ class MyColors {
   static final headerFooterBackGround = Colors.green[100];
   static final borderDark = Color(0xff8DE061);
   static final numberColor = Color(0xff666666);
+  static final gapColor = Color(0xffe4e4e4);
 }
